@@ -32,3 +32,6 @@ npm run lint
 ```
 Emailjs
 ```
+
+# deploy FTP
+- Required ncftpput
