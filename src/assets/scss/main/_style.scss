@@ -451,6 +451,7 @@ body.light .header ul.icon-menu li.icon-box:hover i {
   @media (max-width: 991px) {
     height: 100vh;
   }
+  overflow: scroll;
 }
 .header {
   position: fixed;

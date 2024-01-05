@@ -40,9 +40,9 @@ const Hero = () => {
             })`,
           }}
         ></div>
-        <div className="col-12 col-lg-8 offset-lg-4 home-details  text-center text-lg-start">
+        <div className="col-12 col-lg-8 offset-lg-4 home-details  text-center text-lg-start overflow-x-auto	 h-screen">
           <div>
-            <img class="object-fit-contain border- rounded shadow-4-strong d-sm-block d-lg-none main-img-mobile_mobile" src={heroContent.heroMobileImage} 
+            <img className="object-fit-contain border- rounded shadow-4-strong d-sm-block d-lg-none main-img-mobile_mobile" src={heroContent.heroMobileImage} 
             alt="Paul Osinga"
             />
 
