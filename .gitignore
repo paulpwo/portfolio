@@ -1,0 +1,16 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+.astro/
+
+# environment
+.env
+.env.*
+
+# wrangler
+.wrangler/
+
+# OS
+.DS_Store

@@ -1,0 +1,115 @@
+{
+  "metrics": [
+    {
+      "value": "15+",
+      "label": "Años de experiencia"
+    },
+    {
+      "value": "3+",
+      "label": "Empresas lideradas"
+    }
+  ],
+  "skills": {
+    "Lenguajes": [
+      "Dart/Flutter",
+      "TypeScript",
+      "PHP",
+      "Kotlin",
+      "Swift",
+      "GoLang",
+      "Rust"
+    ],
+    "Frontend": [
+      "HTML/CSS3",
+      "VueJS",
+      "React",
+      "NextJS"
+    ],
+    "Backend": [
+      "Laravel",
+      "Django",
+      "FastAPI",
+      "Spring Boot",
+      "Socket.IO",
+      "GORM"
+    ],
+    "Cloud & DevOps": [
+      "AWS",
+      "Google Cloud",
+      "Docker",
+      "Kubernetes",
+      "Terraform",
+      "CI/CD"
+    ],
+    "Datos": [
+      "MySQL",
+      "SQL",
+      "MongoDB",
+      "SciKit-Learn"
+    ]
+  },
+  "experience": [
+    {
+      "role": "Technical Leader & Full Stack Developer",
+      "company": "TalentPitch / Idea Minds Group",
+      "period": "2025 — Presente",
+      "type": "Liderazgo Técnico",
+      "description": "Liderazgo técnico en plataforma de interacción y match de videos, gestionando equipos de desarrollo en entornos de alta demanda.",
+      "achievements": [
+        "Impulso de nuevas tecnologías y adopción Spec-Driven Development con uso de Agentes de IA",
+        "Impulsé la migración de servicios claves del Laravel a Golang con despliegue optimizado",
+        "Administración de infraestructura AWS y continuidad operativa",
+        "Mentorías mensuales en nuevas tecnologías y arquitectura de microservicios",
+        "Toma de decisiones técnicas estratégicas y corrección de deuda técnica",
+        "Decisiones de arquitectura",
+        "Desarrollo de herramientas internas para automatización de procesos",
+        "Impulso y creación de microservicios en Rust de alto rendimiento"
+      ]
+    },
+    {
+      "role": "Senior Flutter Developer",
+      "company": "Estrellas App — Bogotá",
+      "period": "Jun — Sep 2025",
+      "type": "Arquitectura & Backend",
+      "description": "Desarrollo Flutter y creación de servicios de transcodificación de video.",
+      "achievements": [
+        "Creación del servicio de transcodificación de videos en HLS",
+        "Microservicios en Golang y FastAPI con tiempos de respuesta robustos"
+      ]
+    },
+    {
+      "role": "Senior Flutter Developer",
+      "company": "Fireflux — México",
+      "period": "2024 — May 2025",
+      "type": "App No Code",
+      "description": "Desarrollo y evolución de aplicación no-code en Flutter.",
+      "achievements": [
+        "Desarrollo y evolución de app no-code en Flutter",
+        "Implementación de componentes y funcionalidades para la plataforma"
+      ]
+    },
+    {
+      "role": "Full Stack Developer",
+      "company": "BrandMotion — Bogotá",
+      "period": "2021 — 2026",
+      "type": "Desarrollo a Medida",
+      "description": "Sistemas tecnológicos para microempresas: CRM, ERP, páginas web y sistematizaciones.",
+      "achievements": [
+        "Sistemas de administración e inventarios CRM/ERP",
+        "Páginas web a medida con AWS y bases de datos"
+      ]
+    },
+    {
+      "role": "Full Stack Developer",
+      "company": "1A Ingenieria y Gas",
+      "period": "2023 - 2025",
+      "type": "IoT & Monitoreo",
+      "description": "Sistema de control de instalaciones y monitoreo de servicios de gas.",
+      "achievements": [
+        "App Android en Flutter",
+        "Backend en Laravel con MySQL",
+        "Panel administrativo"
+      ]
+    }
+  ]
+}
