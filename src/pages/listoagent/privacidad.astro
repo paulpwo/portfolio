@@ -1,0 +1,201 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ListoNav from "../../components/ListoNav.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import "../../styles/global.css";
+
+const lastUpdated = "18 de junio de 2026";
+const contactEmail = "paulpwo@gmail.com";
+
+const sections = [
+  { id: "responsable", label: "Responsable" },
+  { id: "informacion", label: "Información que recopilamos" },
+  { id: "uso", label: "Cómo usamos la información" },
+  { id: "plataformas-meta", label: "Plataformas de Meta" },
+  { id: "terceros", label: "Proveedores y terceros" },
+  { id: "almacenamiento", label: "Almacenamiento y seguridad" },
+  { id: "retencion", label: "Retención de datos" },
+  { id: "eliminacion-de-datos", label: "Eliminación de datos" },
+  { id: "menores", label: "Menores de edad" },
+  { id: "cambios", label: "Cambios en la política" },
+  { id: "contacto", label: "Contacto" },
+];
+---
+
+<Layout
+  title="Política de privacidad — ListoAgent"
+  description="Política de privacidad de ListoAgent: qué datos recopilamos de WhatsApp, Instagram y Facebook, cómo los usamos, con quién los compartimos y cómo solicitar su eliminación."
+  path="/listoagent/privacidad"
+  includePersonSchema={false}
+>
+  <ListoNav active="privacidad" />
+
+  <main>
+    <section class="relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-b from-accent-soft via-transparent to-transparent"></div>
+      <div class="relative max-w-3xl mx-auto px-6 lg:px-8 pt-36 pb-12">
+        <span class="inline-flex items-center gap-2 text-xs font-semibold text-accent bg-accent-soft border border-accent/10 px-3 py-1.5 rounded-md uppercase tracking-widest mb-6">
+          ListoAgent
+        </span>
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-4">Política de privacidad</h1>
+        <p class="text-sm text-muted-soft">Última actualización: {lastUpdated}</p>
+      </div>
+    </section>
+
+    <div class="max-w-3xl mx-auto px-6 lg:px-8 pb-24">
+      <!-- Index -->
+      <nav class="bg-surface border border-border rounded-xl p-6 mb-12">
+        <h2 class="text-xs font-bold text-muted uppercase tracking-widest mb-4">Contenido</h2>
+        <ol class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-sm">
+          {sections.map((s, i) => (
+            <li>
+              <a href={`#${s.id}`} class="text-muted hover:text-foreground transition-colors">
+                <span class="text-muted-soft tabular-nums">{String(i + 1).padStart(2, "0")}.</span> {s.label}
+              </a>
+            </li>
+          ))}
+        </ol>
+      </nav>
+
+      <article class="space-y-12 text-base text-muted leading-relaxed [&_p]:max-w-none">
+        <section id="responsable">
+          <h2 class="text-xl font-bold text-foreground mb-3">1. Responsable del tratamiento</h2>
+          <p class="mb-3">
+            ListoAgent es un servicio de atención conversacional asistida por inteligencia artificial
+            operado por Paul Werner Osinga ("nosotros"). Esta política describe cómo se recopila, usa,
+            almacena y protege la información cuando una empresa utiliza ListoAgent para atender a sus
+            clientes a través de WhatsApp, Instagram y Facebook.
+          </p>
+          <p>
+            Para cualquier consulta sobre privacidad puedes escribirnos a
+            <a href={`mailto:${contactEmail}`} class="text-accent hover:underline">{contactEmail}</a>.
+          </p>
+        </section>
+
+        <section id="informacion">
+          <h2 class="text-xl font-bold text-foreground mb-3">2. Información que recopilamos</h2>
+          <p class="mb-3">
+            Cuando una persona escribe o comenta en un canal conectado, ListoAgent procesa los datos
+            necesarios para responder esa conversación:
+          </p>
+          <ul class="space-y-2.5 mb-3">
+            <li class="flex gap-2.5"><span class="text-accent mt-1">•</span><span><strong class="text-foreground font-medium">Contenido de mensajes y comentarios:</strong> el texto, y los archivos multimedia (imágenes, audio, documentos) que la persona envía o publica.</span></li>
+            <li class="flex gap-2.5"><span class="text-accent mt-1">•</span><span><strong class="text-foreground font-medium">Identificadores de perfil:</strong> nombre público, identificador de usuario de la plataforma, número de teléfono (en WhatsApp) o nombre de usuario (en Instagram), según corresponda.</span></li>
+            <li class="flex gap-2.5"><span class="text-accent mt-1">•</span><span><strong class="text-foreground font-medium">Metadatos:</strong> identificadores de mensaje, marcas de tiempo y el canal por el que llegó la conversación.</span></li>
+            <li class="flex gap-2.5"><span class="text-accent mt-1">•</span><span><strong class="text-foreground font-medium">Datos derivados:</strong> resúmenes y notas de memoria por contacto, etiquetas y atributos generados para dar continuidad a la atención.</span></li>
+          </ul>
+          <p>
+            No solicitamos ni recopilamos intencionalmente categorías especiales de datos personales.
+            Te pedimos no compartir información sensible (datos de salud, financieros, etc.) por estos canales.
+          </p>
+        </section>
+
+        <section id="uso">
+          <h2 class="text-xl font-bold text-foreground mb-3">3. Cómo usamos la información</h2>
+          <p class="mb-3">Usamos la información exclusivamente para:</p>
+          <ul class="space-y-2.5">
+            <li class="flex gap-2.5"><span class="text-accent mt-1">•</span><span>Generar y enviar respuestas automáticas mediante el agente de inteligencia artificial.</span></li>
+            <li class="flex gap-2.5"><span class="text-accent mt-1">•</span><span>Mantener el contexto e historial de cada conversación para dar continuidad a la atención.</span></li>
+            <li class="flex gap-2.5"><span class="text-accent mt-1">•</span><span>Ofrecer a la empresa un panel de gestión (mini-CRM) con conversaciones, contactos y métricas.</span></li>
+            <li class="flex gap-2.5"><span class="text-accent mt-1">•</span><span>Operar, mantener y mejorar la seguridad y el funcionamiento del servicio.</span></li>
+          </ul>
+        </section>
+
+        <section id="plataformas-meta">
+          <h2 class="text-xl font-bold text-foreground mb-3">4. Plataformas de Meta</h2>
+          <p class="mb-3">
+            ListoAgent se integra con las APIs oficiales de Meta y cumple con las Condiciones de la
+            Plataforma de Meta. Accedemos únicamente a los datos necesarios para la conversación:
+          </p>
+          <ul class="space-y-2.5 mb-3">
+            <li class="flex gap-2.5"><span class="text-accent mt-1">•</span><span><strong class="text-foreground font-medium">WhatsApp Business (Cloud API):</strong> recibir y enviar mensajes del número conectado.</span></li>
+            <li class="flex gap-2.5"><span class="text-accent mt-1">•</span><span><strong class="text-foreground font-medium">Instagram:</strong> recibir y responder mensajes directos y comentarios de la cuenta conectada.</span></li>
+            <li class="flex gap-2.5"><span class="text-accent mt-1">•</span><span><strong class="text-foreground font-medium">Facebook Pages:</strong> recibir y responder mensajes y comentarios de la página conectada.</span></li>
+          </ul>
+          <p>
+            No usamos los datos de las plataformas de Meta para publicidad ni los transferimos a redes
+            de datos, intermediarios de datos ni con fines ajenos a la prestación del servicio.
+          </p>
+        </section>
+
+        <section id="terceros">
+          <h2 class="text-xl font-bold text-foreground mb-3">5. Proveedores y terceros</h2>
+          <p class="mb-3">
+            Para generar las respuestas, el contenido de las conversaciones se procesa mediante
+            proveedores de modelos de lenguaje (IA) externos —como Anthropic, OpenAI o Google—,
+            sujetos a sus propias políticas de privacidad y términos de uso. También utilizamos
+            proveedores de infraestructura y base de datos para almacenar la información de forma segura.
+          </p>
+          <p>
+            Estos proveedores procesan los datos únicamente por nuestra instrucción y para prestar el
+            servicio. No vendemos información personal ni la compartimos con terceros con fines comerciales propios.
+          </p>
+        </section>
+
+        <section id="almacenamiento">
+          <h2 class="text-xl font-bold text-foreground mb-3">6. Almacenamiento y seguridad</h2>
+          <p>
+            La información se almacena en bases de datos PostgreSQL con controles de acceso. Las
+            credenciales y tokens de los canales se cifran en reposo (AES-256-GCM). Aplicamos medidas
+            técnicas y organizativas razonables para proteger los datos frente a accesos no autorizados,
+            pérdida o alteración. Ningún sistema es completamente infalible, por lo que no podemos
+            garantizar seguridad absoluta.
+          </p>
+        </section>
+
+        <section id="retencion">
+          <h2 class="text-xl font-bold text-foreground mb-3">7. Retención de datos</h2>
+          <p>
+            Conservamos la información mientras la empresa mantenga activo el canal y sea necesaria para
+            prestar el servicio. Cuando deja de ser necesaria, o ante una solicitud de eliminación válida,
+            los datos se eliminan o se anonimizan dentro de un plazo razonable, salvo que la ley exija conservarlos.
+          </p>
+        </section>
+
+        <section id="eliminacion-de-datos">
+          <h2 class="text-xl font-bold text-foreground mb-3">8. Eliminación de datos</h2>
+          <p class="mb-3">
+            Cualquier persona puede solicitar el acceso, la corrección o la eliminación de su información.
+            Para solicitar la eliminación de tus datos:
+          </p>
+          <ul class="space-y-2.5 mb-3">
+            <li class="flex gap-2.5"><span class="text-accent mt-1">•</span><span>Envía un correo a <a href={`mailto:${contactEmail}?subject=Solicitud%20de%20eliminaci%C3%B3n%20de%20datos%20-%20ListoAgent`} class="text-accent hover:underline">{contactEmail}</a> con el asunto "Solicitud de eliminación de datos".</span></li>
+            <li class="flex gap-2.5"><span class="text-accent mt-1">•</span><span>Indica el canal (WhatsApp, Instagram o Facebook) y el identificador con el que interactuaste (número, usuario o nombre del perfil).</span></li>
+            <li class="flex gap-2.5"><span class="text-accent mt-1">•</span><span>Confirmaremos la recepción y eliminaremos la información asociada dentro de los 30 días siguientes.</span></li>
+          </ul>
+          <p>
+            Esta dirección de correo también es el medio designado para las solicitudes de eliminación
+            de datos requeridas por las plataformas de Meta.
+          </p>
+        </section>
+
+        <section id="menores">
+          <h2 class="text-xl font-bold text-foreground mb-3">9. Menores de edad</h2>
+          <p>
+            El servicio está dirigido a empresas y a personas mayores de edad. No recopilamos
+            intencionalmente datos de menores. Si crees que un menor nos ha proporcionado información,
+            contáctanos para eliminarla.
+          </p>
+        </section>
+
+        <section id="cambios">
+          <h2 class="text-xl font-bold text-foreground mb-3">10. Cambios en esta política</h2>
+          <p>
+            Podemos actualizar esta política para reflejar cambios en el servicio o en la normativa.
+            Publicaremos la versión vigente en esta página e indicaremos la fecha de última actualización.
+          </p>
+        </section>
+
+        <section id="contacto">
+          <h2 class="text-xl font-bold text-foreground mb-3">11. Contacto</h2>
+          <p>
+            Si tienes preguntas sobre esta política o sobre el tratamiento de tus datos, escríbenos a
+            <a href={`mailto:${contactEmail}`} class="text-accent hover:underline">{contactEmail}</a>.
+          </p>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <SiteFooter />
+</Layout>

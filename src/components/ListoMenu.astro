@@ -1,0 +1,54 @@
+---
+// Dropdown menu linking to the ListoAgent pages. Reused in the home nav
+// and in the ListoAgent section nav so both stay identical.
+interface Props {
+  align?: "left" | "right";
+}
+const { align = "right" } = Astro.props;
+const panelAlign = align === "right" ? "right-0" : "left-0";
+---
+
+<details class="group relative" data-listo-menu>
+  <summary
+    class="flex items-center gap-1.5 cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden hover:text-foreground transition-colors duration-200"
+  >
+    ListoAgent
+    <svg
+      class="w-3.5 h-3.5 transition-transform duration-200 group-open:rotate-180"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+    >
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+    </svg>
+  </summary>
+  <div
+    class={`absolute ${panelAlign} mt-3 w-56 bg-surface-elevated border border-border rounded-lg p-1.5 shadow-xl shadow-black/40 z-50`}
+  >
+    <a
+      href="/listoagent"
+      class="block px-3 py-2 text-sm rounded-md text-muted hover:text-foreground hover:bg-surface transition-colors"
+    >
+      El producto
+    </a>
+    <a
+      href="/listoagent/privacidad"
+      class="block px-3 py-2 text-sm rounded-md text-muted hover:text-foreground hover:bg-surface transition-colors"
+    >
+      Política de privacidad
+    </a>
+  </div>
+</details>
+
+<script>
+  // Close any open menu when clicking outside of it.
+  document.addEventListener("click", (event) => {
+    const target = event.target as Node;
+    document
+      .querySelectorAll<HTMLDetailsElement>("details[data-listo-menu][open]")
+      .forEach((menu) => {
+        if (!menu.contains(target)) menu.removeAttribute("open");
+      });
+  });
+</script>
