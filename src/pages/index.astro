@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ListoMenu from '../components/ListoMenu.astro';
 import '../styles/global.css';
 import data from '../data/data.json';
 
@@ -21,11 +22,11 @@ const { metrics, skills, experience } = data;
         <a href="#experiencia" class="hover:text-foreground transition-colors duration-200">Experiencia</a>
         <a href="#skills" class="hover:text-foreground transition-colors duration-200">Stack</a>
         <a href="#contacto" class="hover:text-foreground transition-colors duration-200">Contacto</a>
+        <ListoMenu />
       </div>
-      <a href="mailto:paulpwo@gmail.com"
-        class="sm:hidden text-sm font-medium text-accent hover:text-foreground transition-colors">
-        Contacto
-      </a>
+      <div class="sm:hidden text-sm font-medium text-muted">
+        <ListoMenu align="right" />
+      </div>
     </div>
   </nav>
 
