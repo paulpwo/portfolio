@@ -25,3 +25,6 @@
 ## Delivery
 - PR #7 `Feat/SwissRedesign` → main, merged 2026-10-01 (commit f869839, merge 307ae95).
 - Previews `src/pages/rediseno/` intentionally not shipped.
+
+## Follow-up
+- [x] T5 OG image in Swiss style (1200×630), meta width/height/alt updated (inline: 1 asset + mechanical meta edit). Rendered from HTML with headless Chrome; visually checked.
