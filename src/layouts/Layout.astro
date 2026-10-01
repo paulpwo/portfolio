@@ -5,13 +5,20 @@ interface Props {
   path?: string;
   ogImage?: string;
   includePersonSchema?: boolean;
+  /** Google Fonts stylesheet URL; defaults to the DM Sans / Instrument Sans pair. */
+  fontsHref?: string;
+  themeColor?: string;
 }
+const defaultFontsHref =
+  "https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=Instrument+Sans:wght@400;500;600;700&display=swap";
 const {
   title,
   description,
   path = "",
   ogImage: ogImageProp,
   includePersonSchema = true,
+  fontsHref = defaultFontsHref,
+  themeColor = "#1a1a2e",
 } = Astro.props;
 const siteUrl = "https://paulosinga.net";
 const canonical = `${siteUrl}${path}`;
@@ -25,7 +32,7 @@ const ogImage = ogImageProp ?? `${siteUrl}/og-image.jpg`;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="author" content="Paul Werner Osinga - devpwo" />
-    <meta name="theme-color" content="#1a1a2e" />
+    <meta name="theme-color" content={themeColor} />
     <meta name="robots" content="index, follow" />
 
     <!-- Open Graph -->
@@ -51,10 +58,7 @@ const ogImage = ogImageProp ?? `${siteUrl}/og-image.jpg`;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=Instrument+Sans:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href={fontsHref} rel="stylesheet" />
     <title>{title}</title>
 
     <!-- Structured Data -->

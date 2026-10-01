@@ -1,297 +1,621 @@
 ---
+/*
+THESIS: A Swiss International Style CV poster: the grid is the design. It refuses the
+category's card stacks, icons and glow in favor of type, alignment and empty space.
+OWN-WORLD: Cool concrete gray ground, near-black ink, one Swiss red square. Schibsted Grotesk
+only, flush-left ragged-right, 12-column grid, 1px black rules, no radii, no shadows.
+STORY: The name and role land like a poster headline, the two numerals give scale, the
+experience rows read left to right as when, who, what, and the contact column never leaves.
+FIRST VIEWPORT: Red square top-left, name across 12 columns at poster scale, role below,
+numerals 15+ and 3+ in columns 1-6, contact links stacked in columns 9-12.
+FORM: Grounded candidate #2, staging: three distances (poster, rows, details). Seed key 60201a9c.
+System rules live in DESIGN.md.
+*/
 import Layout from '../layouts/Layout.astro';
-import ListoMenu from '../components/ListoMenu.astro';
-import '../styles/global.css';
 import data from '../data/data.json';
 
 const { metrics, skills, experience } = data;
+const waLink =
+  'https://wa.me/573025780000?text=Hola%20Paul%2C%20vi%20tu%20perfil%20y%20me%20gustar%C3%ADa%20hablar%20contigo';
+const fontsHref =
+  'https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;800;900&display=swap';
 ---
 
 <Layout
-  title="Paul Werner Osinga — Technical Leader & Full Stack Developer"
-  description="Technical Leader & Full Stack Developer con +15 años de experiencia. Especializado en Laravel, Flutter, AWS, Kubernetes y arquitecturas cloud de alto rendimiento."
+  title="Paul Werner Osinga · Technical Leader & Full Stack Developer"
+  description="Technical Leader & Full Stack Developer con más de 15 años de experiencia. Creador de Taly, agente de IA de TalentPitch con RAG, tools y skills. Arquitecturas cloud con Laravel, Flutter, Go y AWS."
+  fontsHref={fontsHref}
+  themeColor="#e9eaec"
 >
-  <!-- Navigation -->
-  <nav class="fixed top-0 w-full z-50 bg-background/70 backdrop-blur-xl border-b border-border">
-    <div class="max-w-5xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-2">
-        <span class="text-base font-bold tracking-tight text-foreground">Paul Werner Osinga</span>
-        <span class="hidden sm:inline text-xs font-medium text-muted bg-surface-elevated px-2 py-0.5 rounded-sm uppercase tracking-widest">Developer</span>
-      </a>
-      <div class="hidden sm:flex items-center gap-8 text-sm font-medium text-muted">
-        <a href="#experiencia" class="hover:text-foreground transition-colors duration-200">Experiencia</a>
-        <a href="#skills" class="hover:text-foreground transition-colors duration-200">Stack</a>
-        <a href="#contacto" class="hover:text-foreground transition-colors duration-200">Contacto</a>
-        <ListoMenu />
-      </div>
-      <div class="sm:hidden text-sm font-medium text-muted">
-        <ListoMenu align="right" />
-      </div>
-    </div>
-  </nav>
+  <header class="bar grid">
+    <span class="bar__a">Paul Werner Osinga</span>
+    <span class="bar__b">Bogotá, Colombia</span>
+    <nav class="bar__c" aria-label="Secciones">
+      <a href="#experiencia">Experiencia</a>
+      <a href="#stack">Stack</a>
+      <a href="#contacto">Contacto</a>
+      <a href="https://www.listoagent.net/" target="_blank" rel="noopener">ListoAgent</a>
+    </nav>
+  </header>
 
   <main>
-    <!-- Hero -->
-    <section class="relative overflow-hidden">
-      <!-- Subtle gradient backdrop -->
-      <div class="absolute inset-0 bg-gradient-to-b from-accent-soft via-transparent to-transparent"></div>
-      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-accent/5 rounded-full blur-3xl"></div>
-
-      <div class="relative max-w-5xl mx-auto px-6 lg:px-8 pt-36 pb-24">
-        <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-start">
-          <!-- Left: Title + Description -->
-          <div class="lg:col-span-3">
-            <div class="flex items-center gap-3 mb-6">
-              <span class="inline-flex items-center gap-2 text-xs font-semibold text-accent bg-accent-soft border border-accent/10 px-3 py-1.5 rounded-md uppercase tracking-widest">
-                <span class="w-1.5 h-1.5 bg-accent rounded-full animate-pulse"></span>
-                Disponible
-              </span>
-              <span class="text-xs text-muted">Bogotá, Colombia</span>
-            </div>
-
-            <h1 class="text-4xl sm:text-5xl lg:text-[3.5rem] font-extrabold tracking-tight leading-[1.08] mb-8">
-              Technical Leader &<br/>
-              <span class="text-muted">Full Stack Developer</span>
-            </h1>
-
-            <p class="text-base sm:text-lg text-muted leading-relaxed mb-10">
-              Más de 15 años construyendo y liderando productos digitales.
-              Especializado en arquitecturas cloud con
-              <strong class="text-foreground font-medium">Laravel</strong>,
-              <strong class="text-foreground font-medium">Flutter</strong> y
-              <strong class="text-foreground font-medium">AWS/GCloud</strong>,
-              llevando equipos desde la estrategia hasta la entrega en producción.
-            </p>
-
-            <!-- CTAs -->
-            <div class="flex flex-wrap gap-3">
-              <a href="https://linkedin.com/in/paulpwo" target="_blank" rel="noopener"
-                class="inline-flex items-center gap-2.5 px-5 py-2.5 text-sm font-semibold bg-foreground text-background rounded-lg hover:opacity-90 transition-opacity">
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                LinkedIn
-              </a>
-              <a href="mailto:paulpwo@gmail.com"
-                class="inline-flex items-center gap-2.5 px-5 py-2.5 text-sm font-semibold border border-border text-muted rounded-lg hover:text-foreground hover:border-border-hover transition-colors">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
-                Email
-              </a>
-              <a href="https://github.com/paulpwo" target="_blank" rel="noopener"
-                class="inline-flex items-center gap-2.5 px-5 py-2.5 text-sm font-semibold border border-border text-muted rounded-lg hover:text-foreground hover:border-border-hover transition-colors">
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                GitHub
-              </a>
-            </div>
+    <section class="hero grid" aria-labelledby="name">
+      <div class="red" aria-hidden="true"></div>
+      <h1 id="name">Paul Werner<br />Osinga</h1>
+      <p class="role">Technical Leader &amp;<br />Full Stack Developer</p>
+      <p class="summary">
+        Más de 15 años construyendo y liderando productos digitales. Arquitecturas cloud con
+        Laravel, Flutter y AWS/GCloud, desde la estrategia hasta la entrega en producción.
+      </p>
+      <p class="summary summary--now">
+        Hoy, detrás de <strong>Taly</strong>: el agente de IA de TalentPitch que automatiza gran
+        parte de la comunicación con clientes, con capacidades agénticas, RAG, tools y skills.
+      </p>
+      <dl class="nums">
+        {metrics.map((m) => (
+          <div>
+            <dt>{m.label}</dt>
+            <dd>{m.value}</dd>
           </div>
-
-          <!-- Right: Metrics + Summary cards -->
-          <div class="lg:col-span-2 flex flex-col gap-5 lg:pt-12">
-            <!-- Metrics -->
-            <div class="grid grid-cols-2 gap-4">
-              {metrics.map((m) => (
-                <div class="bg-surface border border-border rounded-xl p-5 text-center">
-                  <div class="text-3xl font-extrabold text-foreground tracking-tight">{m.value}</div>
-                  <div class="text-sm text-muted-soft mt-2 leading-snug">{m.label}</div>
-                </div>
-              ))}
-            </div>
-
-            <!-- Quick highlights -->
-            <div class="bg-surface border border-border rounded-xl p-6">
-              <h3 class="text-xs font-bold text-muted uppercase tracking-widest mb-4">Enfoque actual</h3>
-              <div class="space-y-3">
-                <div class="flex items-center gap-2.5 text-sm text-muted">
-                  <div class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></div>
-                  Microservicios Rust, Go & Laravel
-                </div>
-                <div class="flex items-center gap-2.5 text-sm text-muted">
-                  <div class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></div>
-                  Arquitectura cloud AWS / GCloud
-                </div>
-                <div class="flex items-center gap-2.5 text-sm text-muted">
-                  <div class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></div>
-                  Apps multiplataforma Flutter
-                </div>
-                <div class="flex items-center gap-2.5 text-sm text-muted">
-                  <div class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></div>
-                  Liderazgo técnico & DevOps
-                </div>
-                  <div class="flex items-center gap-2.5 text-sm text-muted">
-                  <div class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></div>
-                  Automatización y despliegues
-                </div>
-                <div class="flex items-center gap-2.5 text-sm text-muted">
-                  <div class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></div>
-                  N8N y workflows automatizados
-                </div>
-                 <div class="flex items-center gap-2.5 text-sm text-muted">
-                  <div class="w-1.5 h-1.5 rounded-full bg-accent shrink-0"></div>
-                  Spec-Driven Development
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        ))}
+      </dl>
+      <div class="reach">
+        <p class="label">Disponible</p>
+        <ul>
+          <li><a href="mailto:paulpwo@gmail.com">paulpwo@gmail.com</a></li>
+          <li><a href={waLink} target="_blank" rel="noopener">WhatsApp +57 302 578 0000</a></li>
+          <li><a href="https://linkedin.com/in/paulpwo" target="_blank" rel="noopener">LinkedIn in/paulpwo</a></li>
+          <li><a href="https://github.com/paulpwo" target="_blank" rel="noopener">GitHub paulpwo</a></li>
+        </ul>
       </div>
     </section>
 
-    <!-- Experience -->
-    <section id="experiencia" class="py-24 border-t border-border">
-      <div class="max-w-5xl mx-auto px-6 lg:px-8">
-        <div class="flex items-center gap-4 mb-16">
-          <h2 class="text-sm font-bold text-accent uppercase tracking-[0.15em]">Experiencia Profesional</h2>
-          <div class="h-px flex-1 bg-border"></div>
-        </div>
+    <section id="experiencia" class="part" aria-labelledby="h-exp">
+      <h2 id="h-exp" class="grid part__h"><span>Experiencia</span></h2>
+      {experience.map((job) => (
+        <article class="job grid">
+          <p class="job__when">
+            {job.period}
+            <span>{job.type}</span>
+          </p>
+          <div class="job__who">
+            <h3>{job.role}</h3>
+            <p class="job__co">
+          {'url' in job && job.url ? (
+            <a href={job.url} target="_blank" rel="noopener">{job.company} ↗</a>
+          ) : (
+            job.company
+          )}
+        </p>
+            <p class="job__desc">{job.description}</p>
+          </div>
+          <ul class="job__what">
+            {job.achievements.map((a) => <li>{a}</li>)}
+          </ul>
+        </article>
+      ))}
+    </section>
 
-        <div class="space-y-6">
-          {experience.map((job, i) => (
-            <article class="group relative bg-surface rounded-xl border border-border hover:border-border-hover transition-all duration-300">
-              <div class="p-6 sm:p-8">
-                <!-- Header -->
-                <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-5">
-                  <div class="flex-1 min-w-0">
-                    <div class="flex flex-wrap items-center gap-2 mb-2">
-                      <span class="text-xs font-bold uppercase tracking-[0.15em] text-accent bg-accent-soft px-2 py-1 rounded-sm">{job.type}</span>
-                      <span class="text-xs font-medium text-muted-soft">{job.period}</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-foreground leading-snug">{job.role}</h3>
-                    <p class="text-base font-medium text-muted mt-1">{job.company}</p>
-                  </div>
-                </div>
-
-                <!-- Description -->
-                <p class="text-base text-muted leading-relaxed mb-6">{job.description}</p>
-
-                <!-- Achievements -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
-                  {job.achievements.map((a) => (
-                    <div class="flex gap-2.5 text-sm text-muted leading-relaxed">
-                      <svg class="w-3.5 h-3.5 text-accent shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
-                      </svg>
-                      <span>{a}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
+    <section id="stack" class="part" aria-labelledby="h-stack">
+      <h2 id="h-stack" class="grid part__h"><span>Stack</span></h2>
+      <div class="stack grid">
+        {Object.entries(skills).map(([cat, items]) => (
+          <div class="stack__col">
+            <h3>{cat}</h3>
+            <ul>
+              {items.map((s) => <li>{s}</li>)}
+            </ul>
+          </div>
+        ))}
       </div>
     </section>
 
-    <!-- Skills -->
-    <section id="skills" class="py-24 border-t border-border">
-      <div class="max-w-5xl mx-auto px-6 lg:px-8">
-        <div class="flex items-center gap-4 mb-16">
-          <h2 class="text-sm font-bold text-accent uppercase tracking-[0.15em]">Stack Tecnológico</h2>
-          <div class="h-px flex-1 bg-border"></div>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {Object.entries(skills).map(([category, items]) => (
-            <div class="bg-surface rounded-xl border border-border p-6">
-              <h3 class="text-xs font-bold text-muted uppercase tracking-widest mb-5">{category}</h3>
-              <div class="flex flex-wrap gap-2.5">
-                {items.map((skill) => (
-                  <span class="text-sm font-medium text-muted bg-surface-elevated px-3 py-1.5 rounded-md border border-border hover:text-foreground hover:border-border-hover transition-colors duration-200">
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contacto" class="py-24 border-t border-border">
-      <div class="max-w-5xl mx-auto px-6 lg:px-8">
-        <div class="flex items-center gap-4 mb-16">
-          <h2 class="text-sm font-bold text-accent uppercase tracking-[0.15em]">Contacto</h2>
-          <div class="h-px flex-1 bg-border"></div>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
-          <!-- Left: CTA -->
-          <div class="lg:col-span-2">
-            <p class="text-xl sm:text-2xl font-bold text-foreground leading-snug mb-3">
-              Hablemos de tu próximo proyecto.
-            </p>
-            <p class="text-muted text-base leading-relaxed mb-6">
-              Disponible para roles de liderazgo técnico, consultoría en arquitectura cloud y desarrollo full stack.
-            </p>
-            <div class="flex items-center gap-3 text-xs text-muted-soft">
-              <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
-              Bogotá, Colombia
-            </div>
-          </div>
-
-          <!-- Right: Contact cards -->
-          <div class="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <a href="https://wa.me/573025780000?text=Hola%20Paul%2C%20vi%20tu%20perfil%20y%20me%20gustar%C3%ADa%20hablar%20contigo" target="_blank" rel="noopener"
-              class="group flex items-center gap-4 bg-surface border border-border rounded-xl p-5 hover:border-[#25d366]/30 transition-all duration-200 sm:col-span-2">
-              <div class="w-10 h-10 rounded-lg bg-[#25d366]/10 flex items-center justify-center shrink-0">
-                <svg class="w-5 h-5 text-[#25d366]" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-              </div>
-              <div class="flex-1">
-                <p class="text-xs font-bold text-muted uppercase tracking-widest">WhatsApp</p>
-                <p class="text-sm font-medium text-muted group-hover:text-foreground transition-colors">+57 302 578 0000</p>
-              </div>
-              <span class="text-xs font-semibold text-[#25d366] bg-[#25d366]/10 px-3 py-1.5 rounded-md hidden sm:inline-block">Escríbeme</span>
-            </a>
-
-            <a href="mailto:paulpwo@gmail.com"
-              class="group flex items-center gap-4 bg-surface border border-border rounded-xl p-5 hover:border-border-hover transition-all duration-200">
-              <div class="w-10 h-10 rounded-lg bg-accent-soft flex items-center justify-center shrink-0">
-                <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
-              </div>
-              <div>
-                <p class="text-xs font-bold text-muted uppercase tracking-widest">Email</p>
-                <p class="text-sm font-medium text-muted group-hover:text-foreground transition-colors">paulpwo@gmail.com</p>
-              </div>
-            </a>
-
-            <a href="https://linkedin.com/in/paulpwo" target="_blank" rel="noopener"
-              class="group flex items-center gap-4 bg-surface border border-border rounded-xl p-5 hover:border-border-hover transition-all duration-200">
-              <div class="w-10 h-10 rounded-lg bg-accent-soft flex items-center justify-center shrink-0">
-                <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-              </div>
-              <div>
-                <p class="text-xs font-bold text-muted uppercase tracking-widest">LinkedIn</p>
-                <p class="text-sm font-medium text-muted group-hover:text-foreground transition-colors">in/paulpwo</p>
-              </div>
-            </a>
-          </div>
-        </div>
+    <section id="contacto" class="part" aria-labelledby="h-contact">
+      <h2 id="h-contact" class="grid part__h"><span>Contacto</span></h2>
+      <div class="contact grid">
+        <p class="contact__lead">Hablemos de tu próximo proyecto.</p>
+        <p class="contact__note">
+          Disponible para roles de liderazgo técnico, consultoría en arquitectura cloud y
+          desarrollo full stack.
+        </p>
+        <ul class="contact__list">
+          <li><span>Email</span><a href="mailto:paulpwo@gmail.com">paulpwo@gmail.com</a></li>
+          <li><span>WhatsApp</span><a href={waLink} target="_blank" rel="noopener">+57 302 578 0000</a></li>
+          <li><span>LinkedIn</span><a href="https://linkedin.com/in/paulpwo" target="_blank" rel="noopener">in/paulpwo</a></li>
+          <li><span>GitHub</span><a href="https://github.com/paulpwo" target="_blank" rel="noopener">paulpwo</a></li>
+        </ul>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="border-t border-border bg-surface">
-    <div class="max-w-5xl mx-auto px-6 lg:px-8 py-6">
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div class="flex items-center gap-3 text-sm text-muted-soft">
-          <span>&copy; 2026 Paul Werner Osinga Leon</span>
-          <span class="w-1 h-1 bg-border rounded-full"></span>
-          <span>paulosinga.net</span>
-        </div>
-        <div class="flex items-center gap-6">
-          <a href="https://wa.me/573025780000?text=Hola%20Paul%2C%20vi%20tu%20perfil%20y%20me%20gustar%C3%ADa%20hablar%20contigo" target="_blank" rel="noopener" class="text-muted-soft hover:text-[#25d366] transition-colors" aria-label="WhatsApp">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          </a>
-          <a href="https://linkedin.com/in/paulpwo" target="_blank" rel="noopener" class="text-muted-soft hover:text-muted transition-colors" aria-label="LinkedIn">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          </a>
-          <a href="https://github.com/paulpwo" target="_blank" rel="noopener" class="text-muted-soft hover:text-muted transition-colors" aria-label="GitHub">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          </a>
-          <a href="mailto:paulpwo@gmail.com" class="text-muted-soft hover:text-muted transition-colors" aria-label="Email">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
-          </a>
-        </div>
-      </div>
-    </div>
+  <footer class="foot grid">
+    <span class="foot__a">© 2026 Paul Werner Osinga Leon</span>
+    <span class="foot__b">paulosinga.net</span>
+    <nav class="foot__c" aria-label="ListoAgent">
+      <a href="https://www.listoagent.net/" target="_blank" rel="noopener">listoagent.net ↗</a>
+      <a href="/listoagent">ListoAgent en este sitio</a>
+      <a href="/listoagent/privacidad">Privacidad</a>
+      <a href="/listoagent/eliminacion-de-datos">Eliminación de datos</a>
+    </nav>
   </footer>
 </Layout>
+
+<style is:global>
+  :root {
+    --ground: oklch(0.93 0.004 250);
+    --ink: oklch(0.17 0.005 250);
+    --ink-2: oklch(0.42 0.006 250);
+    --red: oklch(0.58 0.21 27);
+    --gutter: 24px;
+    --margin: 40px;
+    --font: 'Schibsted Grotesk', 'Helvetica Neue', Arial, sans-serif;
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--font);
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  p,
+  ul,
+  dl,
+  dd {
+    margin: 0;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 220ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  a:hover {
+    background-size: 100% 1px;
+  }
+  :focus-visible {
+    outline: 2px solid var(--red);
+    outline-offset: 2px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--gutter);
+    padding: 0 var(--margin);
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  .bar {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .bar__a {
+    grid-column: 1 / 5;
+  }
+  .bar__b {
+    grid-column: 5 / 9;
+    color: var(--ink-2);
+  }
+  .bar__c {
+    grid-column: 9 / 13;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 20px;
+  }
+
+  .hero {
+    padding-top: 12vh;
+    padding-bottom: 96px;
+    row-gap: 0;
+    align-items: start;
+  }
+  .red {
+    grid-column: 1 / 2;
+    grid-row: 1;
+    aspect-ratio: 1;
+    background: var(--red);
+    margin-bottom: 28px;
+    max-width: 88px;
+  }
+  h1 {
+    grid-column: 1 / 13;
+    grid-row: 2;
+    font-weight: 800;
+    font-size: clamp(3rem, 11.4vw, 10.5rem);
+    line-height: 0.86;
+    letter-spacing: -0.045em;
+    margin-left: -0.04em;
+  }
+  .role {
+    grid-column: 1 / 7;
+    grid-row: 3;
+    margin-top: 40px;
+    font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+  }
+  .summary {
+    grid-column: 7 / 12;
+    grid-row: 3;
+    margin-top: 44px;
+    font-size: 16px;
+    color: var(--ink-2);
+    max-width: 52ch;
+  }
+  .summary--now {
+    grid-row: 4;
+    margin-top: 16px;
+    color: var(--ink);
+  }
+  .summary strong {
+    font-weight: 700;
+  }
+  .nums {
+    grid-column: 1 / 9;
+    grid-row: 5;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--gutter);
+    margin-top: 80px;
+    border-top: 1px solid var(--ink);
+  }
+  .nums div {
+    display: flex;
+    flex-direction: column-reverse;
+    padding-top: 12px;
+  }
+  .nums dt {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink-2);
+  }
+  .nums dd {
+    font-size: clamp(3.5rem, 8vw, 6rem);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+  }
+  .reach {
+    grid-column: 9 / 13;
+    grid-row: 5;
+    margin-top: 80px;
+    border-top: 1px solid var(--ink);
+    padding-top: 12px;
+  }
+  .label {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .label::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: var(--red);
+  }
+  .reach li {
+    padding: 4px 0;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .part {
+    padding-top: 40px;
+  }
+  .part__h {
+    font-size: 14px;
+    font-weight: 700;
+    padding-bottom: 12px;
+    padding-top: 12px;
+    position: relative;
+  }
+  .part__h::after {
+    content: '';
+    position: absolute;
+    left: var(--margin);
+    right: var(--margin);
+    top: 0;
+    height: 2px;
+    background: var(--ink);
+  }
+  .part__h span {
+    grid-column: 1 / 13;
+  }
+
+  .job {
+    padding-top: 28px;
+    padding-bottom: 36px;
+    position: relative;
+  }
+  .job + .job::before {
+    content: '';
+    position: absolute;
+    left: var(--margin);
+    right: var(--margin);
+    top: 0;
+    height: 1px;
+    background: oklch(0.17 0.005 250 / 0.22);
+  }
+  .job__when {
+    grid-column: 1 / 4;
+    font-size: 15px;
+    font-weight: 500;
+  }
+  .job__when span {
+    display: block;
+    color: var(--ink-2);
+    font-size: 14px;
+    font-weight: 400;
+  }
+  .job__who {
+    grid-column: 4 / 9;
+    padding-right: 24px;
+  }
+  .job__who h3 {
+    font-size: clamp(1.25rem, 1.8vw, 1.6rem);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+  }
+  .job__co {
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 6px;
+  }
+  .job__co a {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  .job__co a:hover {
+    text-decoration-color: var(--red);
+  }
+  .job__desc {
+    font-size: 15px;
+    color: var(--ink-2);
+    margin-top: 12px;
+    max-width: 50ch;
+  }
+  .job__what {
+    grid-column: 9 / 13;
+    font-size: 14px;
+  }
+  .job__what li {
+    padding: 3px 0;
+    line-height: 1.4;
+  }
+
+  .stack {
+    padding-top: 28px;
+    padding-bottom: 32px;
+    row-gap: 36px;
+  }
+  .stack__col {
+    grid-column: span 2;
+  }
+  .stack__col:first-child {
+    grid-column: 1 / 4;
+  }
+  .stack__col h3 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .stack__col li {
+    font-size: 15px;
+    padding: 2px 0;
+  }
+
+  .contact {
+    padding-top: 28px;
+    padding-bottom: 120px;
+    align-items: start;
+  }
+  .contact__lead {
+    grid-column: 1 / 8;
+    font-size: clamp(2.25rem, 5.5vw, 4.75rem);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+  }
+  .contact__note {
+    grid-column: 1 / 7;
+    grid-row: 2;
+    margin-top: 24px;
+    color: var(--ink-2);
+    max-width: 48ch;
+  }
+  .contact__list {
+    grid-column: 9 / 13;
+    grid-row: 1 / 3;
+  }
+  .contact__list li {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+    border-top: 1px solid var(--ink);
+  }
+  .contact__list span {
+    font-size: 13px;
+    color: var(--ink-2);
+  }
+  .contact__list a {
+    font-size: 17px;
+    font-weight: 500;
+    align-self: flex-start;
+  }
+
+  .foot {
+    padding-top: 16px;
+    padding-bottom: 64px;
+    font-size: 13px;
+    color: var(--ink-2);
+    position: relative;
+  }
+  .foot::before {
+    content: '';
+    position: absolute;
+    left: var(--margin);
+    right: var(--margin);
+    top: 0;
+    height: 2px;
+    background: var(--ink);
+  }
+  .foot__a {
+    grid-column: 1 / 5;
+  }
+  .foot__b {
+    grid-column: 5 / 9;
+  }
+  .foot__c {
+    grid-column: 9 / 13;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  @media (max-width: 1000px) {
+    :root {
+      --margin: 24px;
+      --gutter: 16px;
+    }
+    .summary {
+      grid-column: 1 / 13;
+      grid-row: 4;
+      margin-top: 20px;
+    }
+    .summary--now {
+      grid-row: 5;
+      margin-top: 12px;
+    }
+    .nums {
+      grid-row: 6;
+      grid-column: 1 / 13;
+      margin-top: 56px;
+    }
+    .reach {
+      grid-row: 7;
+      grid-column: 1 / 13;
+      margin-top: 40px;
+    }
+    .role {
+      grid-column: 1 / 13;
+    }
+    .job__when {
+      grid-column: 1 / 13;
+      margin-bottom: 8px;
+    }
+    .job__who {
+      grid-column: 1 / 8;
+    }
+    .job__what {
+      grid-column: 8 / 13;
+    }
+    .stack__col,
+    .stack__col:first-child {
+      grid-column: span 4;
+    }
+  }
+  @media (max-width: 640px) {
+    :root {
+      --margin: 16px;
+    }
+    .bar__a {
+      grid-column: 1 / 13;
+    }
+    .bar__b {
+      display: none;
+    }
+    .bar__c {
+      grid-column: 1 / 13;
+      margin-top: 8px;
+    }
+    .hero {
+      padding-top: 48px;
+      padding-bottom: 64px;
+    }
+    .red {
+      grid-column: 1 / 3;
+      max-width: 56px;
+    }
+    h1 {
+      font-size: clamp(2.75rem, 15.5vw, 5rem);
+    }
+    .role {
+      margin-top: 24px;
+    }
+    .nums dd {
+      font-size: 3.5rem;
+    }
+    .job__who,
+    .job__what {
+      grid-column: 1 / 13;
+    }
+    .job__who {
+      padding-right: 0;
+    }
+    .job__what {
+      margin-top: 16px;
+      padding-left: 16px;
+      border-left: 1px solid var(--ink);
+    }
+    .stack__col,
+    .stack__col:first-child {
+      grid-column: span 6;
+    }
+    .contact__lead,
+    .contact__note,
+    .contact__list {
+      grid-column: 1 / 13;
+      grid-row: auto;
+    }
+    .contact__list {
+      margin-top: 40px;
+    }
+    .foot__a,
+    .foot__b,
+    .foot__c {
+      grid-column: 1 / 13;
+    }
+    .foot__c {
+      margin-top: 16px;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    a {
+      transition: none;
+    }
+  }
+</style>
