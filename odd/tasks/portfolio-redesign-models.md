@@ -28,3 +28,4 @@
 
 ## Follow-up
 - [x] T5 OG image in Swiss style (1200×630), meta width/height/alt updated (inline: 1 asset + mechanical meta edit). Rendered from HTML with headless Chrome; visually checked.
+- [x] T6 Sharper OG image: re-rendered at 2x (2400×1260, JPEG q95), larger labels, flex bottom row to avoid overlap. Reason: Facebook preview looked blurry at 1200×630.
