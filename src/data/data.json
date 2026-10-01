@@ -50,12 +50,28 @@
   },
   "experience": [
     {
+      "role": "Creador & Full Stack Developer",
+      "company": "ListoAgent",
+      "url": "https://www.listoagent.net/",
+      "period": "2026 — Presente",
+      "type": "Producto propio · IA",
+      "description": "Construcción y soporte de ListoAgent, plataforma para configurar agentes de IA para cualquier empresa sin código, en WhatsApp y Telegram.",
+      "achievements": [
+        "Construcción y soporte continuo de la plataforma en listoagent.net",
+        "Agente conversacional sobre Pi y Bun con memoria por contacto y RAG (pgvector)",
+        "Panel de administración en React con mini-CRM, métricas y exportación",
+        "Conectores para WhatsApp (Meta Cloud API) y Telegram, con LLM multi-proveedor",
+        "Arquitectura hexagonal: núcleo de dominio puro y adaptadores intercambiables"
+      ]
+    },
+    {
       "role": "Technical Leader & Full Stack Developer",
       "company": "TalentPitch / Idea Minds Group",
       "period": "2025 — Presente",
       "type": "Liderazgo Técnico",
       "description": "Liderazgo técnico en plataforma de interacción y match de videos, gestionando equipos de desarrollo en entornos de alta demanda.",
       "achievements": [
+        "Creación de Taly, agente de IA para WhatsApp que automatiza la comunicación con clientes usando capacidades agénticas, RAG, tools y skills",
         "Impulso de nuevas tecnologías y adopción Spec-Driven Development con uso de Agentes de IA",
         "Impulsé la migración de servicios claves del Laravel a Golang con despliegue optimizado",
         "Administración de infraestructura AWS y continuidad operativa",
